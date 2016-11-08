@@ -13,6 +13,10 @@
 		1F18A7BF1DD1476300422E94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F18A7BD1DD1476300422E94 /* Main.storyboard */; };
 		1F18A7C11DD1476300422E94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F18A7C01DD1476300422E94 /* Assets.xcassets */; };
 		1F18A7C41DD1476300422E94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F18A7C21DD1476300422E94 /* LaunchScreen.storyboard */; };
+		1F18A7CD1DD14BF300422E94 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F18A7CC1DD14BF300422E94 /* Player.m */; };
+		1F18A7D01DD14F1C00422E94 /* GenerateQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F18A7CF1DD14F1C00422E94 /* GenerateQuestion.m */; };
+		1F18A7D91DD15CA800422E94 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F18A7D81DD15CA800422E94 /* InputHandler.m */; };
+		1F18A7E21DD178C600422E94 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F18A7E11DD178C600422E94 /* GameModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		1F18A7C01DD1476300422E94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F18A7C31DD1476300422E94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F18A7C51DD1476300422E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F18A7CB1DD14BF300422E94 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		1F18A7CC1DD14BF300422E94 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		1F18A7CE1DD14F1C00422E94 /* GenerateQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateQuestion.h; sourceTree = "<group>"; };
+		1F18A7CF1DD14F1C00422E94 /* GenerateQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateQuestion.m; sourceTree = "<group>"; };
+		1F18A7D71DD15CA800422E94 /* InputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
+		1F18A7D81DD15CA800422E94 /* InputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
+		1F18A7E01DD178C600422E94 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		1F18A7E11DD178C600422E94 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +74,15 @@
 				1F18A7B81DD1476300422E94 /* AppDelegate.m */,
 				1F18A7BA1DD1476300422E94 /* ViewController.h */,
 				1F18A7BB1DD1476300422E94 /* ViewController.m */,
+				1F18A7D71DD15CA800422E94 /* InputHandler.h */,
+				1F18A7D81DD15CA800422E94 /* InputHandler.m */,
 				1F18A7BD1DD1476300422E94 /* Main.storyboard */,
+				1F18A7CB1DD14BF300422E94 /* Player.h */,
+				1F18A7CC1DD14BF300422E94 /* Player.m */,
+				1F18A7E01DD178C600422E94 /* GameModel.h */,
+				1F18A7E11DD178C600422E94 /* GameModel.m */,
+				1F18A7CE1DD14F1C00422E94 /* GenerateQuestion.h */,
+				1F18A7CF1DD14F1C00422E94 /* GenerateQuestion.m */,
 				1F18A7C01DD1476300422E94 /* Assets.xcassets */,
 				1F18A7C21DD1476300422E94 /* LaunchScreen.storyboard */,
 				1F18A7C51DD1476300422E94 /* Info.plist */,
@@ -149,9 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F18A7CD1DD14BF300422E94 /* Player.m in Sources */,
+				1F18A7D91DD15CA800422E94 /* InputHandler.m in Sources */,
 				1F18A7BC1DD1476300422E94 /* ViewController.m in Sources */,
 				1F18A7B91DD1476300422E94 /* AppDelegate.m in Sources */,
 				1F18A7B61DD1476300422E94 /* main.m in Sources */,
+				1F18A7D01DD14F1C00422E94 /* GenerateQuestion.m in Sources */,
+				1F18A7E21DD178C600422E94 /* GameModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

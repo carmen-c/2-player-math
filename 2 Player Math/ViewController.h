@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Player.h"
+#import "InputHandler.h"
+#import "GenerateQuestion.h"
+#import "GameModel.h"
 
 @interface ViewController : UIViewController
 
