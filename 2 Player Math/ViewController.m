@@ -38,15 +38,6 @@
    
 }
 
-//-(void) setPlayer: (Player *)player{
-//    if ([player.name isEqualToString:@"player1"]) {
-//        self.gameModel.currentPlayer = [self.gameModel.playerList objectAtIndex:0];
-//    }else{
-//        self.gameModel.currentPlayer = [self.gameModel.playerList objectAtIndex:1];
-//    }
-//}
-
-
 - (IBAction)one:(UIButton *)sender {
     self.inputAnswer.text = [self.inputAnswer.text stringByAppendingString:@"1"];
 }
@@ -81,12 +72,22 @@
     NSInteger userAnswer = self.inputAnswer.text.integerValue;
     // Submit answer.
     [self.gameModel checkAnswer:userAnswer];
-    self.inputAnswer.text = @"";
     
     self.playerTurn.text = [NSString stringWithFormat:@"%@",[self.gameModel displayCurrentPlayer]];
+    self.inputAnswer.text = @"";
+    [self endGame:self.gameModel.gameOver];
     
+    //    self.player1score.text = [NSString stringWithFormat:@"%@",[];
+    //    self.player2score.text = [NSString stringWithFormat:@"%@",[];
     
 }
 
+-(void) endGame:(BOOL) gameOver{
+    if (self.gameModel.gameOver == YES){
+        NSString *game = [NSString stringWithFormat:@"game over."];
+        self.question.text = game;
+    }
+    
+}
 
 @end

@@ -34,10 +34,20 @@
     return displayPlayer;
 }
 
+-(NSUInteger) nextPlayer{
+    NSUInteger currentPlayerIndex = [self.playerList indexOfObject:self.currentPlayer];
+    if (currentPlayerIndex == 0) {
+        currentPlayerIndex = 1 ;
+    }else if (currentPlayerIndex == 1) {
+        currentPlayerIndex = 0;
+    }
+    return currentPlayerIndex;
+}
+
 -(void)checkAnswer:(NSInteger)userAnswer{
     GenerateQuestion *question;
-    NSUInteger currentPlayerIndex = [self.playerList indexOfObject:self.currentPlayer];
-    NSUInteger nextPlayerIndex = (currentPlayerIndex +1);
+//    NSUInteger currentPlayerIndex = [self.playerList indexOfObject:self.currentPlayer];
+    NSUInteger nextPlayerIndex = [self nextPlayer];
     
     if (userAnswer == question.answer) {
         [self.currentPlayer addScore];
@@ -47,6 +57,7 @@
         if (self.currentPlayer.lives <= 0) {
             _gameOver = YES;
         }
+        
         self.currentPlayer = [self.playerList objectAtIndex:nextPlayerIndex];
         //new question
         [[GenerateQuestion alloc]init];
