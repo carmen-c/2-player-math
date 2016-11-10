@@ -15,16 +15,21 @@
 {
     self = [super init];
     if (self) {
-        _x = arc4random_uniform(20) +1;
-        _y = arc4random_uniform(20) +1;
-        _answer = self.x + self.y;
+        [self randomNumbers];
     }
     return self;
 }
 
 -(NSString *)generateQuestion{
+    [self randomNumbers];
     NSString *question = [NSString stringWithFormat:@"%d + %d ?", self.x, self.y];
     return question;
+}
+
+-(void) randomNumbers{
+    self.x = arc4random_uniform(20) +1;
+    self.y = arc4random_uniform(20) +1;
+    self.answer = self.x + self.y;
 }
 
 @end

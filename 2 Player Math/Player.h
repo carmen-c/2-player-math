@@ -19,4 +19,5 @@
 -(void) addScore;
 - (instancetype)initWithName:(NSString*)name;
 
+
 @end

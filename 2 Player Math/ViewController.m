@@ -17,8 +17,6 @@
 
 @property (nonatomic, strong) InputHandler *inputhandler;
 @property (nonatomic, strong) GameModel *gameModel;
-
-
 @end
 
 @implementation ViewController
@@ -28,14 +26,20 @@
     
     self.gameModel = [[GameModel alloc]init];
     self.playerTurn.text = [NSString stringWithFormat:@"%@",[self.gameModel displayCurrentPlayer]];
-//    self.player1score.text = [NSString stringWithFormat:@"%@",[];
-//    self.player2score.text = [NSString stringWithFormat:@"%@",[];
+    
+    Player *p1 = [self.gameModel.playerList objectAtIndex:0];
+    int p1Score = p1.score;
+    self.player1score.text = [NSString stringWithFormat:@"%d",p1Score];
+    
+    Player *p2 = [self.gameModel.playerList objectAtIndex:1];
+    int p2Score = p2.score;
+    self.player2score.text = [NSString stringWithFormat:@"%d",p2Score];
     
     self.question.text = [NSString stringWithFormat:@"%@",[self.gameModel.question generateQuestion]];
     
     self.inputhandler = [[InputHandler alloc]init];
     self.inputAnswer.enabled = NO;
-   
+    
 }
 
 - (IBAction)one:(UIButton *)sender {
@@ -72,15 +76,23 @@
     NSInteger userAnswer = self.inputAnswer.text.integerValue;
     // Submit answer.
     [self.gameModel checkAnswer:userAnswer];
-    
-    self.playerTurn.text = [NSString stringWithFormat:@"%@",[self.gameModel displayCurrentPlayer]];
-    self.inputAnswer.text = @"";
     [self endGame:self.gameModel.gameOver];
+
+    self.playerTurn.text = [NSString stringWithFormat:@"%@",[self.gameModel displayCurrentPlayer]];
+    self.question.text = [NSString stringWithFormat:@"%@",[self.gameModel.question generateQuestion]];
     
-    //    self.player1score.text = [NSString stringWithFormat:@"%@",[];
-    //    self.player2score.text = [NSString stringWithFormat:@"%@",[];
+    Player *p1 = [self.gameModel.playerList objectAtIndex:0];
+    int p1Score = p1.score;
+    self.player1score.text = [NSString stringWithFormat:@"%d",p1Score];
+    
+    Player *p2 = [self.gameModel.playerList objectAtIndex:1];
+    int p2Score = p2.score;
+    self.player2score.text = [NSString stringWithFormat:@"%d",p2Score];
+
+    self.inputAnswer.text = @"";
     
 }
+
 
 -(void) endGame:(BOOL) gameOver{
     if (self.gameModel.gameOver == YES){

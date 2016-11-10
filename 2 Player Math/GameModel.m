@@ -24,10 +24,11 @@
         [_playerList addObject:player];
         
         _currentPlayer = [self.playerList objectAtIndex:0];
-        _question = [[GenerateQuestion alloc]init];
+//        _question = [[GenerateQuestion alloc]init];
     }
     return self;
 }
+
 
 -(NSString *) displayCurrentPlayer{
     NSString *displayPlayer = [NSString stringWithFormat:@"%@", self.currentPlayer.name];
@@ -46,7 +47,6 @@
 
 -(void)checkAnswer:(NSInteger)userAnswer{
     GenerateQuestion *question;
-//    NSUInteger currentPlayerIndex = [self.playerList indexOfObject:self.currentPlayer];
     NSUInteger nextPlayerIndex = [self nextPlayer];
     
     if (userAnswer == question.answer) {
@@ -55,19 +55,13 @@
     }else{
         [self.currentPlayer loseALife];
         if (self.currentPlayer.lives <= 0) {
-            _gameOver = YES;
+            self.gameOver = YES;
         }
-        
-        self.currentPlayer = [self.playerList objectAtIndex:nextPlayerIndex];
-        //new question
-        [[GenerateQuestion alloc]init];
-        
-        }
+    }
+    
+    self.currentPlayer = [self.playerList objectAtIndex:nextPlayerIndex];
     
 }
-//
-//-(NSString *)nextQuestion{
-//    
-//}
+
 
 @end

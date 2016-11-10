@@ -16,6 +16,6 @@
 @property (nonatomic, assign) int answer;
 
 -(NSString *) generateQuestion;
--(BOOL) checkAnswer;
+
 
 @end
